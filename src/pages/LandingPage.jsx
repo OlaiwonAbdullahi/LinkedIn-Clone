@@ -1,9 +1,11 @@
+import Hero from "../components/Hero";
 import NavBar from "../components/NavBar";
 
 const LandingPage = () => {
   return (
-    <div>
+    <div className=" bg-white">
       <NavBar />
+      <Hero />
     </div>
   );
 };
