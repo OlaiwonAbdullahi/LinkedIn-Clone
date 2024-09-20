@@ -6,6 +6,8 @@ export default {
       colors: {
         white: "#ffffff",
         blue: "rgb(0, 65, 130)",
+        lightred: "#f8ece4",
+        lightgrey: "#f4f4f4",
       },
     },
   },
