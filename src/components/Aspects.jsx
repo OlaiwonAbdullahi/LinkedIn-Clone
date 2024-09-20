@@ -1,5 +1,5 @@
-import BButton from "./buttons/BButton";
 import Button from "./buttons/Button";
+import Carret from "../assets/carret.svg";
 
 const Aspects = () => {
   return (
@@ -23,7 +23,9 @@ const Aspects = () => {
         <Button>information Technology</Button>
         <Button>Marketing</Button>
         <Button>Human Resources</Button>
-        <Button>Show More</Button>
+        <Button>
+          Show More <img src={Carret} alt="" className="h-5 w-5" />
+        </Button>
       </div>
     </div>
   );
