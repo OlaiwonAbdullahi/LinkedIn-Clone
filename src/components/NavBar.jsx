@@ -1,5 +1,5 @@
 import logo from "../assets/logo.webp";
-import BButton from "./BButton";
+import BButton from "./buttons/BButton";
 import postcard from "../assets/postcard.svg";
 import playbtn from "../assets/play-btn.svg";
 import puzzle from "../assets/puzzle.svg";
@@ -18,45 +18,6 @@ const NavBar = () => {
       {/* Navigation Links */}
       <div className="flex gap-7 mt-2">
         <div className="hidden md:flex gap-8 font-thin text-xs">
-          <div className="flex flex-col items-center">
-            <img
-              src={postcard}
-              alt="Articles"
-              className="h-6 w-6 md:h-7 md:w-7"
-            />
-            <span>Articles</span>
-          </div>
-          <div className="flex flex-col items-center">
-            <img src={people} alt="People" className="h-6 w-6 md:h-7 md:w-7" />
-            <span>People</span>
-          </div>
-          <div className="flex flex-col items-center">
-            <img
-              src={playbtn}
-              alt="Learning"
-              className="h-6 w-6 md:h-7 md:w-7"
-            />
-            <span>Learning</span>
-          </div>
-          <div className="flex flex-col items-center">
-            <img src={briefcase} alt="Jobs" className="h-6 w-6 md:h-7 md:w-7" />
-            <span>Jobs</span>
-          </div>
-          <div className="flex flex-col items-center">
-            <img src={puzzle} alt="Games" className="h-6 w-6 md:h-7 md:w-7" />
-            <span>Games</span>
-          </div>
-          <div className="flex flex-col items-center border-l border-r px-2">
-            <img
-              src={laptop}
-              alt="Get the App"
-              className="h-6 w-6 md:h-7 md:w-7"
-            />
-            <span className="whitespace-pre">Get the App</span>
-          </div>
-        </div>
-        <br />
-        <div className="flex md:hidden gap-8 font-thin text-xs">
           <div className="flex flex-col items-center">
             <img
               src={postcard}
