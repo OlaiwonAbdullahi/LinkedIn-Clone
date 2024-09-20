@@ -12,13 +12,29 @@ const NavBar = () => {
         <img src={logo} className="h-20"></img>
       </div>
       <div className="flex gap-4 mt-4">
-        <div className="flex gap-4">
-          <img src={postcard} alt="" className="h-7 w-7" />
-          <img src={playbtn} alt="" className="h-7 w-7" />
-          <img src={puzzle} alt="" className="h-7 w-7" />
-          <img src={laptop} alt="" className="h-7 w-7" />
-          <img src={laptop} alt="" className="h-7 w-7" />
-          <img src={laptop} alt="" className="h-7 w-7" />
+        <div className="flex gap-14 p-1">
+          <div className="">
+            <img src={postcard} alt="" className="h-7 w-7" />
+            <span>Articles</span>
+          </div>
+          <div className="">
+            <img src={playbtn} alt="" className="h-7 w-7" />
+            <span>Articles</span>
+          </div>
+          <div className="">
+            <img src={puzzle} alt="" className="h-7 w-7" />
+            <span>Articles</span>
+          </div>
+          <div className="">
+            <img src={laptop} alt="" className="h-7 w-7" />
+            <span>Articles</span>
+          </div>
+          <div className="">
+            <img src={laptop} alt="" className="h-7 w-7" />
+          </div>
+          <div className="">
+            <img src={laptop} alt="" className="h-7 w-7" />
+          </div>
         </div>
         <div className="flex gap-3">
           <BButton>Sign In</BButton>
