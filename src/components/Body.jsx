@@ -1,4 +1,5 @@
 import ProfilePics from "../assets/slider1.png";
+import LinkedIn from "../assets/LinkedIn.png";
 const Body = () => {
   return (
     <div className="flex flex-row">
@@ -26,8 +27,10 @@ const Body = () => {
           <span className="text-right">Ad </span>
         </div>
         <p>Abdullahi ,claim your $100 in ad credit</p>
-        <img src={ProfilePics} alt="" />
-        <img src={LinkedIn} alt="" />
+        <div className="">
+          <img src={ProfilePics} alt="" />
+          <img src={LinkedIn} alt="" />
+        </div>
       </div>
     </div>
   );
