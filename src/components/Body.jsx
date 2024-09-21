@@ -25,6 +25,9 @@ const Body = () => {
         <div className="flex te">
           <span className="text-right">Ad </span>
         </div>
+        <p>Abdullahi ,claim your $100 in ad credit</p>
+        <img src={ProfilePics} alt="" />
+        <img src={LinkedIn} alt="" />
       </div>
     </div>
   );
