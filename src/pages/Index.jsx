@@ -1,5 +1,11 @@
-const Linkedin = () => {
-  return <div>asdfg</div>;
+import MainNavBar from "../components/MainNavBar";
+
+const Index = () => {
+  return (
+    <div>
+      <MainNavBar />
+    </div>
+  );
 };
 
-export default Linkedin;
+export default Index;
