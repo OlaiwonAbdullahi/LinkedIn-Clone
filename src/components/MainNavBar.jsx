@@ -50,13 +50,13 @@ const MainNavBar = () => {
           </div>
           <div className="flex flex-col items-center  border-l px-4">
             <img src={grid} alt="Get the App" className="h-5 w-5" />
-            <span className="flex gap-1">
+            <span className="flex gap-1 whitespace-nowrap">
               For Business <img src={Carret} className="w-3 h-3 mt-1" />
             </span>
           </div>
           <div className="flex flex-col items-center">
             <img src={premium} alt="Games" className="h-5 w-5" />
-            <span>Try Premium for NGN0</span>
+            <span className=" whitespace-nowrap">Try Premium for NGN0</span>
           </div>
         </div>
       </div>
