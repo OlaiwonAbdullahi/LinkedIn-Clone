@@ -1,15 +1,17 @@
 import LinkedIn from "../assets/LinkedIn.png";
-import postcard from "../assets/postcard.svg";
+import grid from "../assets/grid.svg";
 import messages from "../assets/chat.svg";
 import Alarm from "../assets/bell.svg";
-import laptop from "../assets/laptop.svg";
+import Home from "../assets/house.svg";
+import premium from "../assets/premium.png";
 import briefcase from "../assets/briefcase.svg";
 import people from "../assets/people.png";
+import Carret from "../assets/carret.svg";
 
 const MainNavBar = () => {
   return (
     <div className="bg-white text-textcolor shadow-md">
-      <div className="h-12 flex justify-between items-center px-4 md:px-10">
+      <div className="h-12 flex justify-between items-center px-4 md:px-32">
         {/* Left section with logo and search */}
         <div className="flex gap-2 items-center">
           <img
@@ -20,35 +22,41 @@ const MainNavBar = () => {
           <input
             type="text"
             placeholder="&#x1F50D; Search"
-            className="border bg-sky-200 w-56 h-8 placeholder:text-textcolor rounded-sm p-4"
+            className="border bg-sky-100 w-64 h-8 placeholder:text-textcolor rounded-sm p-4"
           />
         </div>
 
         {/* Right section with icons */}
         <div className="hidden md:flex gap-8 font-thin text-xs items-center">
           <div className="flex flex-col items-center">
-            <img src={postcard} alt="Articles" className="h-7 w-7" />
+            <img src={Home} alt="Articles" className="h-5 w-5" />
             <span>Home</span>
           </div>
           <div className="flex flex-col items-center">
-            <img src={people} alt="People" className="h-7 w-7" />
+            <img src={people} alt="People" className="h-5 w-5" />
             <span>Network</span>
           </div>
           <div className="flex flex-col items-center">
-            <img src={briefcase} alt="Learning" className="h-7 w-7" />
+            <img src={briefcase} alt="Learning" className="h-5 w-5" />
             <span>Job</span>
           </div>
           <div className="flex flex-col items-center">
-            <img src={messages} alt="Jobs" className="h-7 w-7" />
+            <img src={messages} alt="Jobs" className="h-5 w-5" />
             <span>Messages</span>
           </div>
           <div className="flex flex-col items-center">
-            <img src={Alarm} alt="Games" className="h-7 w-7" />
+            <img src={Alarm} alt="Games" className="h-5 w-5" />
             <span>Notification</span>
           </div>
-          <div className="flex flex-col items-center border-l border-r px-4">
-            <img src={laptop} alt="Get the App" className="h-7 w-7" />
-            <span>Get the App</span>
+          <div className="flex flex-col items-center  border-l px-4">
+            <img src={grid} alt="Get the App" className="h-5 w-5" />
+            <span className="flex gap-1">
+              For Business <img src={Carret} className="w-3 h-3 mt-1" />
+            </span>
+          </div>
+          <div className="flex flex-col items-center">
+            <img src={premium} alt="Games" className="h-5 w-5" />
+            <span>Try Premium for NGN0</span>
           </div>
         </div>
       </div>
