@@ -2,6 +2,7 @@ import Logo from "../assets/Logo.webp";
 import Google from "../assets/google.png";
 import apple from "../assets/apple.svg";
 import HeroBtn from "../components/buttons/HeroBtn";
+import { Link } from "react-router-dom";
 
 const SignIn = () => {
   return (
@@ -13,8 +14,8 @@ const SignIn = () => {
         </h2>
         <div className="p-4 w-full">
           <HeroBtn>
-            <img src={Google} alt="Google logo" className="w-6 h-6" /> Continue
-            with Google
+            <img src={Google} alt="Google logo" className="w-6 h-6" />{" "}
+            <Link to="/Index">Continue with Google</Link>
           </HeroBtn>
           <HeroBtn>
             <img src={apple} alt="Google logo" className="w-6 h-6" /> Sign in
@@ -44,7 +45,10 @@ const SignIn = () => {
         </button>
         <h2 className="mt-3">
           New to LinkedIn?{" "}
-          <span className="text-blue font-semibold">Join now</span>
+          <span className="text-blue font-semibold">
+            {" "}
+            <Link to="/SignUp">Join now</Link>
+          </span>
         </h2>
       </div>
     </div>

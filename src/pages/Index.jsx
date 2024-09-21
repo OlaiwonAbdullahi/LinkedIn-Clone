@@ -1,9 +1,11 @@
+import Body from "../components/Body";
 import MainNavBar from "../components/MainNavBar";
 
 const Index = () => {
   return (
-    <div>
+    <div className="bg-lightgrey">
       <MainNavBar />
+      <Body />
     </div>
   );
 };

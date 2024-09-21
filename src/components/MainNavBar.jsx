@@ -10,7 +10,7 @@ import Carret from "../assets/carret.svg";
 
 const MainNavBar = () => {
   return (
-    <div className="bg-white text-textcolor shadow-md">
+    <div className="bg-white text-textcolor shadow-md top-0 sticky">
       <div className="h-12 flex justify-between items-center px-4 md:px-32">
         {/* Left section with logo and search */}
         <div className="flex gap-2 items-center">
