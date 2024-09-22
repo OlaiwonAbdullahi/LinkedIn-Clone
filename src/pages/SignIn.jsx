@@ -3,8 +3,18 @@ import Google from "../assets/google.png";
 import apple from "../assets/apple.svg";
 import HeroBtn from "../components/buttons/HeroBtn";
 import { Link } from "react-router-dom";
+import { UserAuth } from "../context/AuthContext";
 
 const SignIn = () => {
+  const { googleSignIn } = UserAuth();
+  const handleGoogleSignIn = async () => {
+    try {
+      await googleSignIn();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="flex flex-col items-center min-h-screen">
       <img src={Logo} alt="" className="self-start w-32 ml-3" />
@@ -13,10 +23,14 @@ const SignIn = () => {
           Sign In
         </h2>
         <div className="p-4 w-full">
-          <HeroBtn>
+          <button
+            className="w-full md:w-full flex items-center justify-center gap-2 border border-gray-700 text-gray-700 p-3 rounded-full mb-4"
+            onClick={handleGoogleSignIn}
+          >
             <img src={Google} alt="Google logo" className="w-6 h-6" />{" "}
             <Link to="/Index">Continue with Google</Link>
-          </HeroBtn>
+          </button>
+
           <HeroBtn>
             <img src={apple} alt="Google logo" className="w-6 h-6" /> Sign in
             with Apple

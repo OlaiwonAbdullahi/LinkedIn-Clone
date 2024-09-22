@@ -8,33 +8,38 @@ import SignUp from "./SignUp";
 import Index from "../pages/Index";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { AuthContextProvider } from "../context/AuthContext";
 
 const LandingPage = () => {
   return (
-    <Router>
-      <Routes>
-        {/* Landing Page Route */}
-        <Route
-          path="/"
-          element={
-            <div className="bg-white">
-              <NavBar />
-              <Hero />
-              <Article />
-              <Aspects />
-              <Jobs />
-            </div>
-          }
-        />
+    <div className="">
+      <AuthContextProvider>
+        <Router>
+          <Routes>
+            {/* Landing Page Route */}
+            <Route
+              path="/"
+              element={
+                <div className="bg-white">
+                  <NavBar />
+                  <Hero />
+                  <Article />
+                  <Aspects />
+                  <Jobs />
+                </div>
+              }
+            />
 
-        {/* SignIn Route */}
-        <Route path="/SignIn" element={<SignIn />} />
+            {/* SignIn Route */}
+            <Route path="/SignIn" element={<SignIn />} />
 
-        {/* SignUp Route */}
-        <Route path="/SignUp" element={<SignUp />} />
-        <Route path="/Index" element={<Index />} />
-      </Routes>
-    </Router>
+            {/* SignUp Route */}
+            <Route path="/SignUp" element={<SignUp />} />
+            <Route path="/Index" element={<Index />} />
+          </Routes>
+        </Router>
+      </AuthContextProvider>
+    </div>
   );
 };
 
