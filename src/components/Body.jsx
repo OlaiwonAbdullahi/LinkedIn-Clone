@@ -62,6 +62,8 @@ const Body = () => {
             <img src={Carret} alt="" className="w-3" />
           </div>
         </div>
+
+        <Post />
       </div>
 
       <div className="basis-1/4 h-full w-full bg-white p-3 m-7 rounded-xl border-gray-400 border">
@@ -114,6 +116,35 @@ function PostForm() {
           <span className="text-base font-semibold ">Write Articles</span>
         </div>
       </div>
+    </div>
+  );
+}
+
+function Post() {
+  return (
+    <div className="h-full w-full bg-white p-2 mt-1 rounded-xl border-gray-400 border">
+      <div className="flex justify-end gap-2">
+        <img src={Dots} alt="" className="w-5 mt-2" />
+        <p className="text-2xl"> &times; </p>
+      </div>
+
+      <div className="flex flex-row  gap-3">
+        <div className="">
+          <img src={ProfilePics} alt="" className="w-12" />
+        </div>
+        <div className="">
+          <h2 className="text-base font-semibold">Abdullahi Olaiwon</h2>
+          <p className="text-xs">Lorem ipsum dolor sit....</p>
+          <span className=" text-xs">2h.</span>
+        </div>
+      </div>
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero velit
+        magnam repellendus nesciunt ipsa commodi aliquam dolor, praesentium
+        vitae et quod fuga, inventore possimus animi tempore minima quisquam
+        voluptates minus!
+      </p>
     </div>
   );
 }
