@@ -49,6 +49,10 @@ const Body = () => {
           <img src={bookmark} alt="" />
           <span className="font-semibold text-sm">Saved Items</span>
         </div>
+
+        <button className="border border-blue text-blue rounded-full p-1 w-24 h-10 font-semibold text-base whitespace-nowrap ">
+          Log Out
+        </button>
       </div>
       <div className="basis-2/4 h-full w-full ">
         <PostForm />
