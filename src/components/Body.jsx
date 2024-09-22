@@ -8,7 +8,9 @@ import Photo from "../assets/picture.svg";
 import calendar from "../assets/calendar.svg";
 import news from "../assets/news.svg";
 import Carret from "../assets/carret.svg";
+import { UserAuth } from "../context/AuthContext.jsx";
 const Body = () => {
+  const { user, logOut } = UserAuth();
   return (
     <div className="flex flex-row justify-between">
       <div className="basis-1/4 h-full w-full bg-white  m-7 rounded-xl border border-gray-400">
@@ -20,7 +22,7 @@ const Body = () => {
         </div>
 
         <h2 className="text-base text-center font-semibold ">
-          Abdullahi Olaiwon
+          {user.displayName}
         </h2>
 
         <p className="text-center text-sm my-3 text-gray-600">
@@ -49,10 +51,11 @@ const Body = () => {
           <img src={bookmark} alt="" />
           <span className="font-semibold text-sm">Saved Items</span>
         </div>
-
-        <button className="border border-blue text-blue rounded-full p-1 w-24 h-10 font-semibold text-base whitespace-nowrap ">
-          Log Out
-        </button>
+        <div className="flex justify-center mb-3">
+          <button className="border border-blue text-blue rounded-full p-1 w-24 h-10 font-semibold text-base whitespace-nowrap ">
+            Log Out
+          </button>
+        </div>
       </div>
       <div className="basis-2/4 h-full w-full ">
         <PostForm />
