@@ -128,7 +128,7 @@ function Post() {
         <p className="text-2xl"> &times; </p>
       </div>
 
-      <div className="flex flex-row  gap-3">
+      <div className="flex flex-row  gap-3 pl-3">
         <div className="">
           <img src={ProfilePics} alt="" className="w-12" />
         </div>
@@ -139,12 +139,19 @@ function Post() {
         </div>
       </div>
 
-      <p>
+      <p className=" text-sm ml-2">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero velit
         magnam repellendus nesciunt ipsa commodi aliquam dolor, praesentium
         vitae et quod fuga, inventore possimus animi tempore minima quisquam
         voluptates minus!
       </p>
+      <div className=" flex mx-auto justify-center">
+        <img
+          src={LinkedIn}
+          alt=""
+          className="w-[30rem] h-[30rem] m-3 rounded-md"
+        />
+      </div>
     </div>
   );
 }

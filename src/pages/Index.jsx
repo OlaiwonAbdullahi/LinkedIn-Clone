@@ -3,7 +3,7 @@ import MainNavBar from "../components/MainNavBar";
 
 const Index = () => {
   return (
-    <div className="bg-lightgrey h-screen">
+    <div className="bg-lightgrey h-full pb-8">
       <MainNavBar />
       <Body />
     </div>
