@@ -1,3 +1,41 @@
+const data = [
+  {
+    name: "John Doe",
+    post: "Just completed a marathon!",
+    occupation: "Software Engineer",
+    time: "2 hours ago",
+    image: "https://picsum.photos/200/300",
+  },
+  {
+    name: "Jane Smith",
+    post: "Excited to start a new project on AI!",
+    occupation: "Data Scientist",
+    time: "1 hour ago",
+    image: "https://picsum.photos/200/300",
+  },
+  {
+    name: "Michael Johnson",
+    post: "Attended an amazing Web3 conference today.",
+    occupation: "Blockchain Developer",
+    time: "30 minutes ago",
+    image: "https://picsum.photos/200/300",
+  },
+  {
+    name: "Emily Davis",
+    post: "Launched a new blog on tech trends.",
+    occupation: "Content Creator",
+    time: "5 hours ago",
+    image: "https://picsum.photos/200/300",
+  },
+  {
+    name: "David Wilson",
+    post: "Preparing for a coding bootcamp.",
+    occupation: "Full Stack Developer",
+    time: "10 minutes ago",
+    image: "https://picsum.photos/200/300",
+  },
+];
+
 //import ProfilePics from "../assets/slider1.png";
 import Premium from "../assets/premium.png";
 import Dots from "../assets/three-dots.svg";
@@ -165,7 +203,7 @@ function Post({ user }) {
       </p>
       <div className=" flex mx-auto justify-center">
         <img
-          src={LinkedIn}
+          src="https://picsum.photos/200/300"
           alt=""
           className="w-[30rem] h-[30rem] m-3 rounded-md"
         />
