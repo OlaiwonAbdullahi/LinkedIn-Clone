@@ -1,4 +1,4 @@
-import ProfilePics from "../assets/slider1.png";
+//import ProfilePics from "../assets/slider1.png";
 import Premium from "../assets/premium.png";
 import Dots from "../assets/three-dots.svg";
 import LinkedIn from "../assets/linkedin.png";
@@ -11,13 +11,21 @@ import Carret from "../assets/carret.svg";
 import { UserAuth } from "../context/AuthContext.jsx";
 const Body = () => {
   const { user, logOut } = UserAuth();
+  const handleSignOut = async () => {
+    try {
+      await logOut();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="flex flex-row justify-between">
       <div className="basis-1/4 h-full w-full bg-white  m-7 rounded-xl border border-gray-400">
         <div className="bg-slate-300 rounded-t-xl pt-6 mb-6 h-20">
           <img
             src={user.photoURL}
-            className="h-20 w-20 mx-auto  p-2  rounded-xl"
+            className="h-20 w-20 mx-auto  p-2  rounded-full"
           ></img>
         </div>
 
@@ -52,7 +60,10 @@ const Body = () => {
           <span className="font-semibold text-sm">Saved Items</span>
         </div>
         <div className="flex justify-center mb-3">
-          <button className="border border-blue text-blue rounded-full p-1 w-24 h-10 font-semibold text-base whitespace-nowrap ">
+          <button
+            className="border border-blue text-blue rounded-full p-1 w-24 h-10 font-semibold text-base whitespace-nowrap "
+            onClick={handleSignOut}
+          >
             Log Out
           </button>
         </div>
@@ -82,7 +93,7 @@ const Body = () => {
           {user.displayName} , Unlock Your Full potential with LinkedIn Premium
         </p>
         <div className="flex gap-4 mx-auto justify-center mb-5">
-          <img src={user.photoURL} alt="" className="h-20 w-20" />
+          <img src={user.photoURL} alt="" className="h-20 w-20 rounded-full" />
           <img src={LinkedIn} alt="" className="h-20 w-20 rounded-lg" />
         </div>
         <p className="text-sm text-center">
@@ -137,7 +148,7 @@ function Post({ user }) {
 
       <div className="flex flex-row  gap-3 pl-3">
         <div className="">
-          <img src={user.photoURL} alt="" className="w-12" />
+          <img src={user.photoURL} alt="" className="w-12 rounded-full" />
         </div>
         <div className="">
           <h2 className="text-base font-semibold">Abdullahi Olaiwon</h2>

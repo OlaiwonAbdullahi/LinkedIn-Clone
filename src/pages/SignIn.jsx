@@ -4,9 +4,13 @@ import apple from "../assets/apple.svg";
 import HeroBtn from "../components/buttons/HeroBtn";
 import { Link } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const SignIn = () => {
-  const { googleSignIn } = UserAuth();
+  const navigate = useNavigate();
+  const { googleSignIn, user } = UserAuth();
+
   const handleGoogleSignIn = async () => {
     try {
       await googleSignIn();
@@ -15,10 +19,16 @@ const SignIn = () => {
     }
   };
 
+  useEffect(() => {
+    if (user != null) {
+      navigate("/Index"); // Ensure the path is correct and case-sensitive
+    }
+  }, [user]); // Add 'user' as a dependency
+
   return (
     <div className="flex flex-col items-center min-h-screen">
-      <img src={Logo} alt="" className="self-start w-32 ml-3" />
-      <div className="flex flex-col  items-center w-full max-w-md mx-auto">
+      <img src={Logo} alt="Logo" className="self-start w-32 ml-3" />
+      <div className="flex flex-col items-center w-full max-w-md mx-auto">
         <h2 className="text-3xl text-textcolor self-start font-semibold">
           Sign In
         </h2>
@@ -27,12 +37,12 @@ const SignIn = () => {
             className="w-full md:w-full flex items-center justify-center gap-2 border border-gray-700 text-gray-700 p-3 rounded-full mb-4"
             onClick={handleGoogleSignIn}
           >
-            <img src={Google} alt="Google logo" className="w-6 h-6" />{" "}
-            <Link to="/Index">Continue with Google</Link>
+            <img src={Google} alt="Google logo" className="w-6 h-6" /> Continue
+            with Google
           </button>
 
           <HeroBtn>
-            <img src={apple} alt="Google logo" className="w-6 h-6" /> Sign in
+            <img src={apple} alt="Apple logo" className="w-6 h-6" /> Sign in
             with Apple
           </HeroBtn>
         </div>
@@ -60,7 +70,6 @@ const SignIn = () => {
         <h2 className="mt-3">
           New to LinkedIn?{" "}
           <span className="text-blue font-semibold">
-            {" "}
             <Link to="/SignUp">Join now</Link>
           </span>
         </h2>
