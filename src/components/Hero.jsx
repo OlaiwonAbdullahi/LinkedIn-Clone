@@ -1,12 +1,12 @@
 import HeroImg from "../assets/heroimg.svg";
 import Google from "../assets/Google.png";
 import HeroBtn from "./buttons/HeroBtn";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
-const SignIn = () => {
+const Hero = () => {
   const navigate = useNavigate();
   const { googleSignIn, user } = UserAuth();
 
@@ -24,8 +24,6 @@ const SignIn = () => {
     }
   }, [user]); // Add 'user' as a dependency
 
-
-const Hero = () => {
   return (
     <div className="flex flex-col md:flex-row mt-5 md:items-center md:justify-between px-5 md:pl-20">
       <div className="flex flex-col items-center md:items-start md:w-1/2 mb-8 md:mb-0">
