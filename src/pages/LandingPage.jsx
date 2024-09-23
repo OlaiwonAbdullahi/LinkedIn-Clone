@@ -9,6 +9,7 @@ import Index from "../pages/Index";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthContextProvider } from "../context/AuthContext";
+import Protected from "../components/Protected";
 
 const LandingPage = () => {
   return (
@@ -35,7 +36,14 @@ const LandingPage = () => {
 
             {/* SignUp Route */}
             <Route path="/SignUp" element={<SignUp />} />
-            <Route path="/Index" element={<Index />} />
+            <Route
+              path="/Index"
+              element={
+                <Protected>
+                  <Index />
+                </Protected>
+              }
+            />
           </Routes>
         </Router>
       </AuthContextProvider>
