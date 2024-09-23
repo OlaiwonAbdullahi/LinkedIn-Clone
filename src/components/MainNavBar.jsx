@@ -1,4 +1,4 @@
-import LinkedIn from "../assets/linkedin.png";
+import linkedin from "../assets/linkedin2.png";
 import grid from "../assets/grid.svg";
 import messages from "../assets/chat.svg";
 import Alarm from "../assets/bell.svg";
@@ -15,7 +15,7 @@ const MainNavBar = () => {
         {/* Left section with logo and search */}
         <div className="flex gap-2 items-center">
           <img
-            src={LinkedIn}
+            src={linkedin}
             alt="LinkedIn Logo"
             className="h-10 w-10 rounded-sm"
           />
