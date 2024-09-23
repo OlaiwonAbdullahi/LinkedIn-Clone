@@ -58,7 +58,7 @@ const Body = () => {
         </div>
       </div>
       <div className="basis-2/4 h-full w-full ">
-        <PostForm />
+        <PostForm user={user} />
         <div className=" p-2 flex">
           <div className=" basis-10/12  p-2">
             <hr className="border border-textcolor" />
@@ -70,7 +70,7 @@ const Body = () => {
           </div>
         </div>
 
-        <Post />
+        <Post user={user} />
       </div>
 
       <div className="basis-1/4 h-full w-full bg-white p-3 m-7 rounded-xl border-gray-400 border">
@@ -79,10 +79,10 @@ const Body = () => {
           <img src={Dots} alt="" />
         </div>
         <p className="text-center font-medium mb-5">
-          Abdullahi , Unlock Your Full potential with LinkedIn Premium
+          {user.displayName} , Unlock Your Full potential with LinkedIn Premium
         </p>
         <div className="flex gap-4 mx-auto justify-center mb-5">
-          <img src={ProfilePics} alt="" className="h-20 w-20" />
+          <img src={user.photoURL} alt="" className="h-20 w-20" />
           <img src={LinkedIn} alt="" className="h-20 w-20 rounded-lg" />
         </div>
         <p className="text-sm text-center">
@@ -98,11 +98,11 @@ const Body = () => {
 
 export default Body;
 
-function PostForm() {
+function PostForm({ user }) {
   return (
     <div className="h-full w-full bg-white p-2 mt-7 rounded-xl border-gray-400 border">
       <div className=" flex gap-3">
-        <img src={ProfilePics} alt="" className="w-12 h-12 rounded-full" />
+        <img src={user.photoURL} alt="" className="w-12 h-12 rounded-full" />
         <input
           type="text"
           placeholder="Start a Post"
@@ -127,7 +127,7 @@ function PostForm() {
   );
 }
 
-function Post() {
+function Post({ user }) {
   return (
     <div className="h-full w-full bg-white p-2 mt-1 rounded-xl border-gray-400 border">
       <div className="flex justify-end gap-2">
@@ -137,7 +137,7 @@ function Post() {
 
       <div className="flex flex-row  gap-3 pl-3">
         <div className="">
-          <img src={ProfilePics} alt="" className="w-12" />
+          <img src={user.photoURL} alt="" className="w-12" />
         </div>
         <div className="">
           <h2 className="text-base font-semibold">Abdullahi Olaiwon</h2>
