@@ -4,7 +4,7 @@ import Dots from "../assets/three-dots.svg";
 import LinkedIn from "../assets/linkedIn.png";
 import bookmark from "../assets/bookmark.svg";
 import BBotton from "./buttons/BButton.jsx";
-import Photo from "../assets/picture.svg";
+import Photo from "../assets/Picture.svg";
 import calendar from "../assets/calendar.svg";
 import news from "../assets/news.svg";
 import Carret from "../assets/carret.svg";
