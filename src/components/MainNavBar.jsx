@@ -1,4 +1,4 @@
-import LinkedIn from "../assets/LinkedIn.png";
+import LinkedIn from "../assets/linkedin.png";
 import grid from "../assets/grid.svg";
 import messages from "../assets/chat.svg";
 import Alarm from "../assets/bell.svg";
