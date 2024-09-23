@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <div className="flex justify-between items-center p-3 md:mx-20 mx-5 top-0 sticky bg-white">
+    <div className="flex justify-between items-center p-3 md:px-20 mx-5 top-0 sticky bg-white">
       {/* Logo Section */}
       <div className="">
         <img src={logo} className="h-14 w-20 md:h-20 md:w-28" alt="Logo" />
