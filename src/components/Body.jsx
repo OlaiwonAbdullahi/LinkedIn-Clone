@@ -60,7 +60,7 @@ const Body = () => {
 
   return (
     <div className="flex flex-row justify-between">
-      <div className="basis-1/4 h-full w-full bg-white m-7 rounded-xl border border-gray-400">
+      <div className="basis-1/4 h-full w-full bg-white md:m-7 m-0 rounded-xl border border-gray-400 md:flex md:flex-col hidden">
         <div className="bg-slate-300 rounded-t-xl pt-6 mb-6 h-20">
           {user && (
             <img
@@ -111,7 +111,7 @@ const Body = () => {
         </div>
       </div>
 
-      <div className="basis-2/4 h-full w-full">
+      <div className="basis-2/4 h-full md:w-full w-3/4 flex flex-col mx-auto ">
         <PostForm user={user} />
         <div className="p-2 flex">
           <div className="basis-10/12 p-2">
@@ -126,7 +126,7 @@ const Body = () => {
         <FormArr posts={data} user={user} />
       </div>
 
-      <div className="basis-1/4 h-full w-full bg-white p-3 m-7 rounded-xl border-gray-400 border">
+      <div className="basis-1/4 h-full w-full bg-white p-3 m-7 rounded-xl border-gray-400 border md:flex md:flex-col hidden">
         <div className="flex justify-end gap-2">
           <p className="text-right">Ad</p>
           <img src={Dots} alt="" />
@@ -168,7 +168,7 @@ function FormArr({ posts, user }) {
 
 function PostForm({ user }) {
   return (
-    <div className="h-full w-full bg-white p-2 mt-7 rounded-xl border-gray-400 border">
+    <div className="h-full w-full  bg-white p-2 mt-7 rounded-xl border-gray-400 border">
       <div className="flex gap-3">
         {user && (
           <img
