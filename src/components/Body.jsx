@@ -180,6 +180,8 @@ function PostForm({ user }) {
         <input
           type="text"
           placeholder="Start a Post"
+          //value={}
+          //onChange={}
           className="border border-gray-400 rounded-full w-full h-12 p-3 placeholder:font-semibold placeholder:text-textcolor"
         />
       </div>
