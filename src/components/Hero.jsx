@@ -1,6 +1,29 @@
 import HeroImg from "../assets/heroimg.svg";
 import Google from "../assets/Google.png";
 import HeroBtn from "./buttons/HeroBtn";
+import { Link } from "react-router-dom";
+import { UserAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+
+const SignIn = () => {
+  const navigate = useNavigate();
+  const { googleSignIn, user } = UserAuth();
+
+  const handleGoogleSignIn = async () => {
+    try {
+      await googleSignIn();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    if (user != null) {
+      navigate("/Index"); // Ensure the path is correct and case-sensitive
+    }
+  }, [user]); // Add 'user' as a dependency
+
 
 const Hero = () => {
   return (
@@ -10,10 +33,13 @@ const Hero = () => {
           Welcome to your <br></br> professional community
         </h2>
 
-        <HeroBtn>
+        <button
+          className="w-full md:w-full flex items-center justify-center gap-2 border border-gray-700 text-gray-700 p-3 rounded-full mb-4"
+          onClick={handleGoogleSignIn}
+        >
           <img src={Google} alt="Google logo" className="w-6 h-6" /> Continue
           with Google
-        </HeroBtn>
+        </button>
 
         <HeroBtn className="w-full md:w-auto bg-white text-blue-600 border border-blue-600 p-3 rounded-md mb-4">
           Sign in with email
