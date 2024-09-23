@@ -16,13 +16,13 @@ const Body = () => {
       <div className="basis-1/4 h-full w-full bg-white  m-7 rounded-xl border border-gray-400">
         <div className="bg-slate-300 rounded-t-xl pt-6 mb-6 h-20">
           <img
-            src={user?.photoURL}
+            src={user?.photoURL || { ProfilePics }}
             className="h-20 w-20 mx-auto  p-2  rounded-xl"
           ></img>
         </div>
 
         <h2 className="text-base text-center font-semibold ">
-          {user.displayName}
+          {user?.displayName || "Anonymous User"}
         </h2>
 
         <p className="text-center text-sm my-3 text-gray-600">
