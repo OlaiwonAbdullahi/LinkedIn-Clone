@@ -1,5 +1,5 @@
-import Logo from "../assets/Logo.webp";
 import Google from "../assets/google.png";
+import Logo from "../assets/google.png";
 import apple from "../assets/apple.svg";
 import HeroBtn from "../components/buttons/HeroBtn";
 import { Link } from "react-router-dom";
