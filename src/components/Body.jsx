@@ -14,6 +14,7 @@ import chat from "../assets/chat.svg";
 import plus from "../assets/plus.svg";
 import { UserAuth } from "../context/AuthContext.jsx";
 import { useState } from "react";
+import InitialPost from "./InitialPost.jsx";
 
 const Body = () => {
   const [showFormTemp, setShowFormTemp] = useState(false);
@@ -117,6 +118,8 @@ const Body = () => {
           />
         )}
         <FormArr posts={post} user={user} />
+
+        <InitialPost />
       </div>
 
       <div className="basis-1/4 h-full w-full bg-white p-3 m-7 rounded-xl border-gray-400 border md:flex md:flex-col hidden">
