@@ -17,9 +17,14 @@ import { useState } from "react";
 
 const Body = () => {
   const [showFormTemp, setShowFormTemp] = useState(false);
+  const [post, setPost] = useState([]);
 
   function handleShowFormTemp() {
     setShowFormTemp((show) => !show);
+  }
+  function handleAddPost(newPost) {
+    setPost((post) => [...post, newPost]);
+    setShowFormTemp(false);
   }
 
   const { user, logOut } = UserAuth();
@@ -143,7 +148,11 @@ const Body = () => {
           </div>
         </div>
         {showFormTemp && (
-          <FormTemp user={user} onAddPost={handleShowFormTemp} />
+          <FormTemp
+            user={user}
+            onAddPost={handleShowFormTemp}
+            handleAddPost={handleAddPost}
+          />
         )}
         <FormArr posts={data} user={user} />
       </div>
@@ -284,8 +293,26 @@ function Post({ user, post }) {
     </div>
   );
 }
+function FormTemp({ user, onAddPost, handleAddPost }) {
+  const [text, setText] = useState("");
 
-function FormTemp({ user, onAddPost }) {
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    if (!text) return;
+
+    const newPost = {
+      name: user?.displayName || "Anonymous User",
+      post: text,
+      occupation: user?.occupation || "Occupation not provided",
+      time: "Just now",
+      image: user?.photoURL || "https://via.placeholder.com/150",
+    };
+
+    handleAddPost(newPost); // Call the function to add the post
+    setText(""); // Clear the input after submitting
+  }
+
   return (
     <div className="h-full w-full bg-white p-2 mt-1 rounded-xl border-gray-400 border z-50">
       <div className="flex justify-end mb-3">
@@ -294,45 +321,49 @@ function FormTemp({ user, onAddPost }) {
         </button>
       </div>
       <div className="flex gap-2 ml-3">
-        <img src={user.photoURL} alt="" className="h-14 w-14 rounded-full" />
+        <img src={user?.photoURL} alt="" className="h-14 w-14 rounded-full" />
         <div className="">
           <div className="flex gap-1">
-            <h2 className="text-base font-semibold">{user.displayName}</h2>
-            <img src={Carret} alt="" className="w-4" />{" "}
+            <h2 className="text-base font-semibold">{user?.displayName}</h2>
+            <img src={Carret} alt="" className="w-4" />
           </div>
           <span className="text-sm">Post to Anyone</span>
         </div>
       </div>
 
-      <input
-        type="text"
-        placeholder="What do you want to talk about"
-        className="h-64 w-full placeholder:text-2xl focus:outline-none"
-      />
-      <div className="w-1/2 flex gap-2 p-2">
-        <button
-          className="w-2/3 md:w-3/4 font-medium whitespace-nowrap h-10 flex items-center justify-center gap-2 border border-gray-700 text-gray-700 p-3 rounded-full mb-4"
-          //onClick={handleGoogleSignIn}
-        >
-          <img src={Premium} alt="" />
-          <span> Rewrite with AI</span>
-        </button>
-        <div className=" flex gap-4 mt-2 pb-2">
-          <img src={Photo} alt="" className="h-6 w-6" />
-          <img src={calendar} alt="" className="h-6 w-6" />
-          <img src={news} alt="" className="h-8 w-8 " />
-          <img src={plus} alt="" className="h-8 w-8 " />
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          placeholder="What do you want to talk about?"
+          className="h-64 w-full placeholder:text-2xl focus:outline-none"
+        />
+        <div className="w-1/2 flex gap-2 p-2">
+          <button
+            type="button"
+            className="w-2/3 md:w-3/4 font-medium whitespace-nowrap h-10 flex items-center justify-center gap-2 border border-gray-700 text-gray-700 p-3 rounded-full mb-4"
+          >
+            <img src={Premium} alt="" />
+            <span> Rewrite with AI</span>
+          </button>
+          <div className=" flex gap-4 mt-2 pb-2">
+            <img src={Photo} alt="" className="h-6 w-6" />
+            <img src={calendar} alt="" className="h-6 w-6" />
+            <img src={news} alt="" className="h-8 w-8 " />
+            <img src={plus} alt="" className="h-8 w-8 " />
+          </div>
         </div>
-      </div>
-      <hr />
-      <div className="w-full flex mt-4 justify-end">
-        <button
-          className="w-10 md:w-20 font-medium whitespace-nowrap h-10 flex items-center justify-center gap-2 border border-gray-700 text-gray-700 p-3 rounded-full mb-4"
-          //onClick={handleGoogleSignIn}
-        >
-          <span> Post</span>
-        </button>
-      </div>
+        <hr />
+        <div className="w-full flex mt-4 justify-end">
+          <button
+            type="submit"
+            className="w-10 md:w-20 font-medium whitespace-nowrap h-10 flex items-center justify-center gap-2 border border-gray-700 text-gray-700 p-3 rounded-full mb-4"
+          >
+            <span> Post</span>
+          </button>
+        </div>
+      </form>
     </div>
   );
 }
