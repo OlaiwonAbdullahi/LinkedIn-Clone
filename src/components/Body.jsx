@@ -11,6 +11,7 @@ import like from "../assets/like.svg";
 import send from "../assets/send.svg";
 import repeat from "../assets/repeat.svg";
 import chat from "../assets/chat.svg";
+import plus from "../assets/plus.svg";
 import { UserAuth } from "../context/AuthContext.jsx";
 
 const Body = () => {
@@ -278,7 +279,7 @@ function Post({ user, post }) {
 function FormTemp({ user }) {
   return (
     <div className="h-full w-full bg-white p-2 mt-1 rounded-xl border-gray-400 border">
-      <div className="flex justify-end">
+      <div className="flex justify-end mb-3">
         {" "}
         <span className="text-4xl">&times;</span>
       </div>
@@ -306,16 +307,17 @@ function FormTemp({ user }) {
           <img src={Premium} alt="" />
           <span> Rewrite with AI</span>
         </button>
-        <div className=" flex gap-2 mt-2">
+        <div className=" flex gap-4 mt-2 pb-2">
           <img src={Photo} alt="" className="h-6 w-6" />
           <img src={calendar} alt="" className="h-6 w-6" />
-          <img src={news} alt="" className="h-7 w-7 " />
+          <img src={news} alt="" className="h-8 w-8 " />
+          <img src={plus} alt="" className="h-8 w-8 " />
         </div>
       </div>
       <hr />
-      <div className="">
+      <div className="w-full flex mt-4 justify-end">
         <button
-          className="w-2/3 md:w-3/4 font-medium whitespace-nowrap h-10 flex items-center justify-center gap-2 border border-gray-700 text-gray-700 p-3 rounded-full mb-4"
+          className="w-10 md:w-20 font-medium whitespace-nowrap h-10 flex items-center justify-center gap-2 border border-gray-700 text-gray-700 p-3 rounded-full mb-4"
           //onClick={handleGoogleSignIn}
         >
           <span> Post</span>
