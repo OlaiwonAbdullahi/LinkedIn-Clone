@@ -278,22 +278,49 @@ function Post({ user, post }) {
 function FormTemp({ user }) {
   return (
     <div className="h-full w-full bg-white p-2 mt-1 rounded-xl border-gray-400 border">
-      <div className="flex gap-2">
-        <img src={user.photoURL} alt="" className="h-20 w-20 rounded-full" />
+      <div className="flex justify-end">
+        {" "}
+        <span className="text-4xl">&times;</span>
+      </div>
+      <div className="flex gap-2 ml-3">
+        <img src={user.photoURL} alt="" className="h-14 w-14 rounded-full" />
         <div className="">
           <div className="flex gap-1">
-            <h2>{user.displayName}</h2>
+            <h2 className="text-base font-semibold">{user.displayName}</h2>
             <img src={Carret} alt="" className="w-4" />{" "}
           </div>
-          <span>Post to Anyone</span>
+          <span className="text-sm">Post to Anyone</span>
         </div>
       </div>
 
       <input
         type="text"
         placeholder="What do you want to talk about"
-        className="h-64 w-full"
+        className="h-64 w-full placeholder:text-2xl focus:outline-none"
       />
+      <div className="w-1/2 flex gap-2 p-2">
+        <button
+          className="w-2/3 md:w-3/4 font-medium whitespace-nowrap h-10 flex items-center justify-center gap-2 border border-gray-700 text-gray-700 p-3 rounded-full mb-4"
+          //onClick={handleGoogleSignIn}
+        >
+          <img src={Premium} alt="" />
+          <span> Rewrite with AI</span>
+        </button>
+        <div className=" flex gap-2 mt-2">
+          <img src={Photo} alt="" className="h-6 w-6" />
+          <img src={calendar} alt="" className="h-6 w-6" />
+          <img src={news} alt="" className="h-7 w-7 " />
+        </div>
+      </div>
+      <hr />
+      <div className="">
+        <button
+          className="w-2/3 md:w-3/4 font-medium whitespace-nowrap h-10 flex items-center justify-center gap-2 border border-gray-700 text-gray-700 p-3 rounded-full mb-4"
+          //onClick={handleGoogleSignIn}
+        >
+          <span> Post</span>
+        </button>
+      </div>
     </div>
   );
 }
