@@ -7,6 +7,10 @@ import Photo from "../assets/Picture.svg";
 import calendar from "../assets/calendar.svg";
 import news from "../assets/news.svg";
 import Carret from "../assets/carret.svg";
+import like from "../assets/like.svg";
+import send from "../assets/send.svg";
+import repeat from "../assets/repeat.svg";
+import chat from "../assets/chat.svg";
 import { UserAuth } from "../context/AuthContext.jsx";
 
 const Body = () => {
@@ -101,12 +105,20 @@ const Body = () => {
           <img src={bookmark} alt="" />
           <span className="font-semibold text-sm">Saved Items</span>
         </div>
-        <div className="flex justify-center mb-3">
+        <hr />
+        <div className="flex justify-center my-3 gap-2">
           <button
             className="border border-blue text-blue rounded-full p-1 w-24 h-10 font-semibold text-base whitespace-nowrap"
             onClick={handleSignOut}
           >
             Log Out
+          </button>
+          <button
+            className="w-2/3 md:w-2/4 font-medium whitespace-nowrap h-10 flex items-center justify-center gap-2 border border-gray-700 text-gray-700 p-3 rounded-full mb-4"
+            //onClick={handleGoogleSignIn}
+          >
+            <span className=" text-4xl mb-2">&#43; </span>
+            <span> Make a Post</span>
           </button>
         </div>
       </div>
@@ -122,7 +134,7 @@ const Body = () => {
             <img src={Carret} alt="" className="w-3" />
           </div>
         </div>
-
+        <FormTemp />
         <FormArr posts={data} user={user} />
       </div>
 
@@ -177,13 +189,13 @@ function PostForm({ user }) {
             className="w-12 h-12 rounded-full"
           />
         )}
-        <input
-          type="text"
-          placeholder="Start a Post"
-          //value={}
-          //onChange={}
-          className="border border-gray-400 rounded-full w-full h-12 p-3 placeholder:font-semibold placeholder:text-textcolor"
-        />
+
+        <button
+          className="w-2/3 md:w-full font-medium whitespace-nowrap h-15 flex items-center justify-start gap-2 border border-gray-700 text-gray-700 p-3 rounded-full mb-4"
+          //onClick={handleGoogleSignIn}
+        >
+          <span> Start a Post, Try Writing with AI</span>
+        </button>
       </div>
       <div className="pb-0 pt-4 mt-2 px-6 flex justify-between">
         <div className="flex gap-2">
@@ -231,6 +243,40 @@ function Post({ user, post }) {
       <div className="w-full h-full mt-3">
         <img src="https://picsum.photos/600/400" alt="Post" />
       </div>
+      <div className="flex flex-col sm:flex-row justify-between mx-4 sm:mx-auto items-center">
+        <div className=" flex gap-1 basis-full sm:basis-1/2 mb-2 sm:mb-0">
+          <img src={like} alt="" className="h-3 mt-1 font-medium" />
+          <span className="text-xs">Abdulllai and 1,234 others</span>
+        </div>
+        <div className="basis-full sm:basis-1/2 text-right">
+          <span className="text-xs">14,940 comments</span>
+        </div>
+      </div>
+      <hr />
+      <div className=" flex justify-around mt-3">
+        <div className="flex gap-2 font-medium text-gray-600 hover:bg-lightgrey w-24 justify-center h-8 rounded-lg items-center">
+          <img src={like} alt="" className="h-6" />
+          <span>Like</span>
+        </div>
+        <div className="flex gap-2 font-medium text-gray-600  hover:bg-lightgrey w-24 justify-center h-8 rounded-lg items-center">
+          <img src={chat} alt="" className="h-6" />
+          <span> Comment</span>
+        </div>
+        <div className="flex gap-2 font-medium text-gray-600  hover:bg-lightgrey w-24 justify-center h-8 rounded-lg items-center">
+          <img src={repeat} alt="" className="h-6" />
+          <span>Repost</span>
+        </div>
+        <div className="flex gap-2 font-medium text-gray-600  hover:bg-lightgrey w-24 justify-center h-8 rounded-lg items-center">
+          <img src={send} alt="" className="h-6" />
+          <span>Send</span>
+        </div>
+      </div>
     </div>
+  );
+}
+
+function FormTemp() {
+  return (
+    <div className="h-full w-full bg-white p-2 mt-1 rounded-xl border-gray-400 border"></div>
   );
 }
