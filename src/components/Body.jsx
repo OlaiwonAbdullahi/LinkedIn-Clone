@@ -134,7 +134,7 @@ const Body = () => {
             <img src={Carret} alt="" className="w-3" />
           </div>
         </div>
-        <FormTemp />
+        <FormTemp user={user} />
         <FormArr posts={data} user={user} />
       </div>
 
@@ -275,8 +275,25 @@ function Post({ user, post }) {
   );
 }
 
-function FormTemp() {
+function FormTemp({ user }) {
   return (
-    <div className="h-full w-full bg-white p-2 mt-1 rounded-xl border-gray-400 border"></div>
+    <div className="h-full w-full bg-white p-2 mt-1 rounded-xl border-gray-400 border">
+      <div className="flex gap-2">
+        <img src={user.photoURL} alt="" className="h-20 w-20 rounded-full" />
+        <div className="">
+          <div className="flex gap-1">
+            <h2>{user.displayName}</h2>
+            <img src={Carret} alt="" className="w-4" />{" "}
+          </div>
+          <span>Post to Anyone</span>
+        </div>
+      </div>
+
+      <input
+        type="text"
+        placeholder="What do you want to talk about"
+        className="h-64 w-full"
+      />
+    </div>
   );
 }
