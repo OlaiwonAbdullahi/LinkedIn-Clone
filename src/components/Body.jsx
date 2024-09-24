@@ -14,7 +14,7 @@ import chat from "../assets/chat.svg";
 import plus from "../assets/plus.svg";
 import { UserAuth } from "../context/AuthContext.jsx";
 import { useState } from "react";
-import InitialPost from "./InitialPost.jsx";
+import InitialPost from "./FirstPost.jsx";
 
 const Body = () => {
   const [showFormTemp, setShowFormTemp] = useState(false);
