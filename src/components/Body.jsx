@@ -222,7 +222,7 @@ function Post({ user, post }) {
         </div>
       </div>
 
-      <p className="mt-3 mb-4 ml-3">{post.post}</p>
+      <p className="mt-3 mb-4 ml-3 text-sm">{post.post}</p>
 
       <div className="w-full h-full mt-3">
         <img src="https://picsum.photos/600/400" alt="Post" />
@@ -230,10 +230,12 @@ function Post({ user, post }) {
       <div className="flex flex-col sm:flex-row justify-between mx-4 sm:mx-auto items-center">
         <div className=" flex gap-1 basis-full sm:basis-1/2 mb-2 sm:mb-0">
           <img src={like} alt="" className="h-3 mt-1 font-medium" />
-          <span className="text-xs">Abdulllai and 1,234 others</span>
+          <span className="text-xs font-medium">
+            Abdulllai and 1,234 others
+          </span>
         </div>
         <div className="basis-full sm:basis-1/2 text-right">
-          <span className="text-xs">14,940 comments</span>
+          <span className="text-xs font-medium">14,940 comments</span>
         </div>
       </div>
       <hr />
