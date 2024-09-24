@@ -13,8 +13,15 @@ import repeat from "../assets/repeat.svg";
 import chat from "../assets/chat.svg";
 import plus from "../assets/plus.svg";
 import { UserAuth } from "../context/AuthContext.jsx";
+import { useState } from "react";
 
 const Body = () => {
+  const [showFormTemp, setShowFormTemp] = useState(false);
+
+  function handleShowFormTemp() {
+    setShowFormTemp((show) => !show);
+  }
+
   const { user, logOut } = UserAuth();
 
   const handleSignOut = async () => {
@@ -125,7 +132,7 @@ const Body = () => {
       </div>
 
       <div className="basis-2/4 h-full md:w-full w-3/4 flex flex-col mx-auto ">
-        <PostForm user={user} />
+        <PostForm user={user} onAddPost={handleShowFormTemp} />
         <div className="p-2 flex">
           <div className="basis-10/12 p-2">
             <hr className="border border-textcolor" />
@@ -135,7 +142,9 @@ const Body = () => {
             <img src={Carret} alt="" className="w-3" />
           </div>
         </div>
-        <FormTemp user={user} />
+        {showFormTemp && (
+          <FormTemp user={user} onAddPost={handleShowFormTemp} />
+        )}
         <FormArr posts={data} user={user} />
       </div>
 
@@ -179,7 +188,7 @@ function FormArr({ posts, user }) {
   );
 }
 
-function PostForm({ user }) {
+function PostForm({ user, onAddPost }) {
   return (
     <div className="h-full w-full  bg-white p-2 mt-7 rounded-xl border-gray-400 border">
       <div className="flex gap-3">
@@ -193,7 +202,7 @@ function PostForm({ user }) {
 
         <button
           className="w-2/3 md:w-full font-medium whitespace-nowrap h-15 flex items-center justify-start gap-2 border border-gray-700 text-gray-700 p-3 rounded-full mb-4"
-          //onClick={handleGoogleSignIn}
+          onClick={onAddPost}
         >
           <span> Start a Post, Try Writing with AI</span>
         </button>
@@ -276,12 +285,13 @@ function Post({ user, post }) {
   );
 }
 
-function FormTemp({ user }) {
+function FormTemp({ user, onAddPost }) {
   return (
-    <div className="h-full w-full bg-white p-2 mt-1 rounded-xl border-gray-400 border">
+    <div className="h-full w-full bg-white p-2 mt-1 rounded-xl border-gray-400 border z-50">
       <div className="flex justify-end mb-3">
-        {" "}
-        <span className="text-4xl">&times;</span>
+        <button onClick={onAddPost}>
+          <span className="text-4xl">&times;</span>
+        </button>
       </div>
       <div className="flex gap-2 ml-3">
         <img src={user.photoURL} alt="" className="h-14 w-14 rounded-full" />
