@@ -154,7 +154,7 @@ const Body = () => {
             handleAddPost={handleAddPost}
           />
         )}
-        <FormArr posts={data} user={user} />
+        <FormArr posts={post} user={user} />
       </div>
 
       <div className="basis-1/4 h-full w-full bg-white p-3 m-7 rounded-xl border-gray-400 border md:flex md:flex-col hidden">
@@ -299,8 +299,6 @@ function FormTemp({ user, onAddPost, handleAddPost }) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    if (!text) return;
-
     const newPost = {
       name: user?.displayName || "Anonymous User",
       post: text,
@@ -310,7 +308,8 @@ function FormTemp({ user, onAddPost, handleAddPost }) {
     };
 
     handleAddPost(newPost); // Call the function to add the post
-    setText(""); // Clear the input after submitting
+    setText("");
+    console.log(newPost); // Clear the input after submitting
   }
 
   return (
@@ -341,7 +340,7 @@ function FormTemp({ user, onAddPost, handleAddPost }) {
         />
         <div className="w-1/2 flex gap-2 p-2">
           <button
-            type="button"
+            type="submit"
             className="w-2/3 md:w-3/4 font-medium whitespace-nowrap h-10 flex items-center justify-center gap-2 border border-gray-700 text-gray-700 p-3 rounded-full mb-4"
           >
             <img src={Premium} alt="" />
