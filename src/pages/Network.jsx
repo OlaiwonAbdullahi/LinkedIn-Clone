@@ -1,5 +1,14 @@
+import MainNavBar from "../components/MainNavBar";
+
 const Network = () => {
-  return <div>Network</div>;
+  return (
+    <div>
+      <MainNavBar />
+      <div className="">
+        <div className=""></div>
+      </div>
+    </div>
+  );
 };
 
 export default Network;
