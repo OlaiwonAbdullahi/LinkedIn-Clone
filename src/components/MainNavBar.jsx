@@ -7,6 +7,7 @@ import premium from "../assets/premium.png";
 import briefcase from "../assets/briefcase.svg";
 import people from "../assets/people.png";
 import Carret from "../assets/carret.svg";
+import { Link } from "react-router-dom";
 
 const MainNavBar = () => {
   return (
@@ -29,12 +30,16 @@ const MainNavBar = () => {
         {/* Right section with icons */}
         <div className="hidden md:flex gap-8 font-thin text-xs items-center">
           <div className="flex flex-col items-center">
-            <img src={Home} alt="Articles" className="h-5 w-5" />
-            <span>Home</span>
+            <Link to="/">
+              <img src={Home} alt="Articles" className="h-5 w-5" />
+              <span>Home</span>
+            </Link>
           </div>
           <div className="flex flex-col items-center">
-            <img src={people} alt="People" className="h-5 w-5" />
-            <span>Network</span>
+            <Link to="/Network">
+              <img src={people} alt="People" className="h-5 w-5" />
+              <span>Network</span>
+            </Link>
           </div>
           <div className="flex flex-col items-center">
             <img src={briefcase} alt="Learning" className="h-5 w-5" />

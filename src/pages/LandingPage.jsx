@@ -10,6 +10,7 @@ import Index from "../pages/Index";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthContextProvider } from "../context/AuthContext";
 import Protected from "../components/Protected";
+import Network from "./Network";
 
 const LandingPage = () => {
   return (
@@ -17,7 +18,6 @@ const LandingPage = () => {
       <AuthContextProvider>
         <Router>
           <Routes>
-            {/* Landing Page Route */}
             <Route
               path="/"
               element={
@@ -31,10 +31,9 @@ const LandingPage = () => {
               }
             />
 
-            {/* SignIn Route */}
             <Route path="/SignIn" element={<SignIn />} />
+            <Route path="/Network" element={<Network />} />
 
-            {/* SignUp Route */}
             <Route path="/SignUp" element={<SignUp />} />
             <Route
               path="/Index"
