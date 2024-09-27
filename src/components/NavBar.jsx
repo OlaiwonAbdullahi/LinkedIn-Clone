@@ -60,7 +60,7 @@ const NavBar = () => {
         {/* Action Buttons */}
         <div className="flex gap-3">
           <BButton>
-            <Link to="./SignIn">Sign In</Link>
+            <Link to="/SignIn">Sign In</Link>
           </BButton>
           <button className="border-2 border-blue bg-blue text-white rounded-full px-3 py-1 md:px-4 md:py-2 w-20 md:w-24 h-8 md:h-10 font-semibold text-xs md:text-base">
             <Link to="/SignUp"> Join Now</Link>
