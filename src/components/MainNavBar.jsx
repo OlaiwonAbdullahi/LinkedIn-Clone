@@ -42,8 +42,10 @@ const MainNavBar = () => {
             </Link>
           </div>
           <div className="flex flex-col items-center">
-            <img src={briefcase} alt="Learning" className="h-5 w-5" />
-            <span>Job</span>
+            <Link to="/JobsPage">
+              <img src={briefcase} alt="Learning" className="h-5 w-5" />
+              <span>Job</span>
+            </Link>
           </div>
           <div className="flex flex-col items-center">
             <img src={messages} alt="Jobs" className="h-5 w-5" />

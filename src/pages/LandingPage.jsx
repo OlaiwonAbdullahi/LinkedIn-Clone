@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthContextProvider } from "../context/AuthContext";
 import Protected from "../components/Protected";
 import Network from "./Network";
+import JobsPage from "./JobsPage";
 
 const LandingPage = () => {
   return (
@@ -33,6 +34,7 @@ const LandingPage = () => {
 
             <Route path="/SignIn" element={<SignIn />} />
             <Route path="/Network" element={<Network />} />
+            <Route path="/JobsPage" element={<JobsPage />} />
 
             <Route path="/SignUp" element={<SignUp />} />
             <Route
