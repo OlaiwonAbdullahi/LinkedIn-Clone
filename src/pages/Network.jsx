@@ -102,8 +102,23 @@ const Network = ({ user }) => {
             </div>
             <div className="font-medium basis-1/2 text-center">Catch Up</div>
           </div>
-          <div className=" bg-white md:m-7 m-0 rounded-xl border border-gray-400 md:flex md:flex-col"></div>
-          <div className=" bg-white md:m-7 m-0 rounded-xl border border-gray-400 md:flex md:flex-col"></div>
+          <div className=" flex justify-around mt-4 p-2 bg-white md:m-7 m-0 rounded-xl border border-gray-400 ">
+            <div className="">No Pending Invitations</div>
+            <div className="font-medium">Manage</div>
+          </div>
+          <div className=" bg-white md:m-7 mt-4 m-0 rounded-xl border border-gray-400 ">
+            <div className="flex justify-between p-2">
+              <div className=" font-medium">Job Search Smarter</div>
+              <div className=" text-2xl"> &times;</div>
+            </div>
+            <div className="">
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel, tenetur.</p>
+            <div className="">
+              <img src={} alt="" />
+            </div>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
