@@ -1,10 +1,16 @@
 import MainNavBar from "../components/MainNavBar";
 import Newspaper from "../assets/newspaper.svg";
+import calendar from "../assets/calendar.svg";
+import postcard from "../assets/postcard.svg";
+import bookmark from "../assets/bookmark.svg";
+import briefcase from "../assets/briefcase.svg";
 import BBotton from "../components/buttons/BButton";
 import LinkedIn from "../assets/linkedin2.png";
 import Dots from "../assets/three-dots.svg";
+import { UserAuth } from "../context/AuthContext";
 
-const Network = ({ user }) => {
+const Network = () => {
+  const user = UserAuth();
   return (
     <div className=" bg-lightgrey">
       <MainNavBar />
@@ -14,7 +20,7 @@ const Network = ({ user }) => {
           <hr />
 
           <div className=" flex  justify-between p-2">
-            <div className="flex ">
+            <div className="flex gap-2">
               <img src={Newspaper} alt="" className="h-6 w-6" />
               <h2 className=" whitespace-nowrap font-medium">Connections</h2>
             </div>
@@ -22,15 +28,15 @@ const Network = ({ user }) => {
           </div>
 
           <div className=" flex  justify-between p-2">
-            <div className="flex ">
-              <img src={Newspaper} alt="" className="h-6 w-6" />
+            <div className="flex  gap-2">
+              <img src={briefcase} alt="" className="h-6 w-6" />
               <h2 className=" whitespace-nowrap font-medium">Contacts</h2>
             </div>
             <div className=" whitespace-nowrap font-medium">4,232</div>
           </div>
 
           <div className=" flex  justify-between p-2">
-            <div className="flex ">
+            <div className="flex  gap-2">
               <img src={Newspaper} alt="" className="h-6 w-6" />
               <h2 className=" whitespace-nowrap font-medium">
                 Followings & Followers
@@ -40,31 +46,31 @@ const Network = ({ user }) => {
           </div>
 
           <div className=" flex  justify-between p-2">
-            <div className="flex ">
-              <img src={Newspaper} alt="" className="h-6 w-6" />
+            <div className="flex  gap-2">
+              <img src={postcard} alt="" className="h-6 w-6" />
               <h2 className=" whitespace-nowrap font-medium">Groups</h2>
             </div>
             <div className=" whitespace-nowrap font-medium">232</div>
           </div>
 
           <div className=" flex  justify-between p-2">
-            <div className="flex ">
-              <img src={Newspaper} alt="" className="h-6 w-6" />
+            <div className="flex  gap-2">
+              <img src={calendar} alt="" className="h-6 w-6" />
               <h2 className=" whitespace-nowrap font-medium">Events</h2>
             </div>
             <div className=" whitespace-nowrap font-medium">32</div>
           </div>
 
           <div className=" flex  justify-between p-2">
-            <div className="flex ">
-              <img src={Newspaper} alt="" className="h-6 w-6" />
+            <div className="flex  gap-2">
+              <img src={bookmark} alt="" className="h-6 w-6" />
               <h2 className=" whitespace-nowrap font-medium">Pages</h2>
             </div>
             <div className=" whitespace-nowrap font-medium">232</div>
           </div>
 
           <div className=" flex  justify-between p-2">
-            <div className="flex ">
+            <div className="flex  gap-2">
               <img src={Newspaper} alt="" className="h-6 w-6" />
               <h2 className=" whitespace-nowrap font-medium">Newsletters</h2>
             </div>
@@ -106,18 +112,33 @@ const Network = ({ user }) => {
             <div className="">No Pending Invitations</div>
             <div className="font-medium">Manage</div>
           </div>
-          <div className=" bg-white md:m-7 mt-4 m-0 rounded-xl border border-gray-400 ">
+          <div className=" bg-white md:m-7 mt-4 m-0 rounded-xl border border-gray-400 p-4 ">
             <div className="flex justify-between p-2">
               <div className=" font-medium">Job Search Smarter</div>
               <div className=" text-2xl"> &times;</div>
             </div>
             <div className="">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel, tenetur.</p>
-            <div className="">
-              <img src={} alt="" />
+              <p className="text-sm">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel,
+                tenetur.
+              </p>
+              <div className=" flex gap-2 mt-3">
+                <img
+                  src={user?.photoURL || "https://via.placeholder.com/150"}
+                  alt=""
+                  className="h-6 w-6 rounded-full"
+                />
+                <span className="text-xs">
+                  Abdullahi and millions of other members uses Premium
+                </span>
+              </div>
+              <div className=" w-1/2 mt-2">
+                {" "}
+                <button className=" bg-yellow-600 text-textcolor rounded-full p-1 w-3/4 h-10 font-semibold text-base whitespace-nowrap ">
+                  Try Premium For NGN0
+                </button>
+              </div>
             </div>
-            </div>
-
           </div>
         </div>
       </div>
